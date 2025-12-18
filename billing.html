@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Billing & Checkout • SkyWay Travels</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-loader">
+      <div class="loader-orbit">
+        <span></span><span></span><span></span>
+      </div>
+      <p>Preparing your booking details...</p>
+    </div>
+
+    <header class="navbar">
+      <div class="nav-left">
+        <div class="logo">SkyWay<span>Travels</span></div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="billing.html">Billing</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="nav-cart-btn" id="openCartBtn">
+        Cart <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="nav-toggle" id="navToggle">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <main>
+      <section id="billing" class="billing section">
+        <div class="section-header">
+          <h2>Billing &amp; checkout</h2>
+          <p>Review your cart, apply discounts, and complete your booking.</p>
+        </div>
+        <div class="billing-layout">
+          <div class="billing-left card">
+            <h3>Your Cart</h3>
+            <div id="cartEmptyMessage" class="cart-empty">Your cart is empty. Add some trips from the Destinations page to begin.</div>
+            <div id="cartItems" class="cart-items"></div>
+          </div>
+          <div class="billing-right card">
+            <h3>Order Summary</h3>
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span id="subtotalValue">₹0.00</span>
+            </div>
+            <div class="summary-row">
+              <span>Discount</span>
+              <span id="discountValue">-₹0.00</span>
+            </div>
+            <div class="summary-row summary-total">
+              <span>Total</span>
+              <span id="totalValue">₹0.00</span>
+            </div>
+
+            <div class="discount-section">
+              <label for="discountCode">Discount code</label>
+              <div class="discount-input-row">
+                <input
+                  type="text"
+                  id="discountCode"
+                  placeholder="Enter code (e.g. SKY10 or WELCOME20)"
+                />
+                <button class="btn small" id="applyDiscountBtn">Apply</button>
+                <button class="btn small ghost" id="removeDiscountBtn">Remove</button>
+              </div>
+              <p class="discount-hint">
+                Available for demo: <strong>SKY10</strong> (10% off),
+                <strong>WELCOME20</strong> (20% off).
+              </p>
+              <p id="discountMessage" class="discount-message"></p>
+            </div>
+
+            <form id="checkoutForm" class="checkout-form">
+              <h4>Traveler details</h4>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="fullName">Full name</label>
+                  <input id="fullName" type="text" required placeholder="John Doe" />
+                </div>
+                <div class="form-field">
+                  <label for="email">Email</label>
+                  <input id="email" type="email" required placeholder="you@example.com" />
+                </div>
+                <div class="form-field">
+                  <label for="country">Country</label>
+                  <input id="country" type="text" placeholder="United States" />
+                </div>
+                <div class="form-field">
+                  <label for="phone">Phone</label>
+                  <input id="phone" type="tel" placeholder="+1 555 123 4567" />
+                </div>
+              </div>
+
+              <h4>Payment</h4>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="cardNumber">Card number</label>
+                  <input id="cardNumber" type="text" required placeholder="4242 4242 4242 4242" />
+                </div>
+                <div class="form-field">
+                  <label for="expiry">Expiry</label>
+                  <input id="expiry" type="text" required placeholder="MM/YY" />
+                </div>
+                <div class="form-field">
+                  <label for="cvc">CVC</label>
+                  <input id="cvc" type="text" required placeholder="123" />
+                </div>
+              </div>
+
+              <button type="submit" class="btn primary full-width" id="checkoutBtn">
+                Complete booking
+              </button>
+              <p class="secure-text">This is a demo checkout — no real payments are processed.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="cart-drawer" id="cartDrawer">
+      <div class="cart-drawer-header">
+        <h3>Your Cart</h3>
+        <button id="closeCartBtn" class="icon-btn" aria-label="Close cart">✕</button>
+      </div>
+      <div id="drawerCartItems" class="cart-items"></div>
+      <div class="cart-drawer-footer">
+        <div class="summary-row">
+          <span>Total</span>
+          <span id="drawerTotalValue">₹0.00</span>
+        </div>
+        <button class="btn primary full-width" id="goToCheckoutFromCart">Go to checkout</button>
+      </div>
+    </aside>
+    <div class="cart-drawer-backdrop" id="cartDrawerBackdrop"></div>
+
+    <div class="toast" id="toast"></div>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> SkyWay Travels. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+  </html>
+
+

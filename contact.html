@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact • SkyWay Travels</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-loader">
+      <div class="loader-orbit">
+        <span></span><span></span><span></span>
+      </div>
+      <p>Connecting you with our travel designers...</p>
+    </div>
+
+    <header class="navbar">
+      <div class="nav-left">
+        <div class="logo">SkyWay<span>Travels</span></div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="billing.html">Billing</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="nav-cart-btn" id="openCartBtn">
+        Cart <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="nav-toggle" id="navToggle">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <main>
+      <section id="contact" class="contact section">
+        <div class="section-header">
+          <h2>Talk to a travel designer</h2>
+          <p>Prefer a custom itinerary? Share your dream trip and we’ll craft it for you.</p>
+        </div>
+        <div class="contact-layout">
+          <div class="contact-text">
+            <h3>We’re just a message away</h3>
+            <p>
+              Our travel specialists are available 7 days a week to help you plan,
+              tweak, and finalize your next adventure with SkyWay Travels.
+            </p>
+            <ul class="contact-list">
+              <li><strong>Email:</strong> hello@skywaytravels.com</li>
+              <li><strong>Phone:</strong> +1 (555) 987‑6543</li>
+              <li><strong>Hours:</strong> 09:00 – 20:00 (your local time)</li>
+            </ul>
+          </div>
+          <form id="contactForm" class="contact-form">
+  <div class="form-field">
+    <label for="contactName">Name</label>
+    <input id="contactName" type="text" placeholder="Your name" required />
+  </div>
+  <div class="form-field">
+    <label for="contactEmail">Email</label>
+    <input id="contactEmail" type="email" placeholder="you@example.com" required />
+  </div>
+  <div class="form-field">
+    <label for="contactMessage">Trip idea</label>
+    <textarea
+      id="contactMessage"
+      rows="4"
+      placeholder="Tell us where you'd like to go, when, and what you'd love to experience."
+      required
+    ></textarea>
+  </div>
+  <button type="submit" id="sendContactBtn" class="btn primary full-width">
+    📥 Send & Download Message
+  </button>
+</form>
+        </div>
+      </section>
+    </main>
+
+    <aside class="cart-drawer" id="cartDrawer">
+      <div class="cart-drawer-header">
+        <h3>Your Cart</h3>
+        <button id="closeCartBtn" class="icon-btn" aria-label="Close cart">✕</button>
+      </div>
+      <div id="drawerCartItems" class="cart-items"></div>
+      <div class="cart-drawer-footer">
+        <div class="summary-row">
+          <span>Total</span>
+          <span id="drawerTotalValue">₹0.00</span>
+        </div>
+        <button class="btn primary full-width" id="goToCheckoutFromCart">Go to checkout</button>
+      </div>
+    </aside>
+    <div class="cart-drawer-backdrop" id="cartDrawerBackdrop"></div>
+
+    <div class="toast" id="toast"></div>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> SkyWay Travels. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+  </html>
+
+

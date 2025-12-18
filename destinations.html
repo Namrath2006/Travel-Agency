@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destinations • SkyWay Travels</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-loader">
+      <div class="loader-orbit">
+        <span></span><span></span><span></span>
+      </div>
+      <p>Exploring the best routes for you...</p>
+    </div>
+
+    <header class="navbar">
+      <div class="nav-left">
+        <div class="logo">SkyWay<span>Travels</span></div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="billing.html">Billing</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="nav-cart-btn" id="openCartBtn">
+        Cart <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="nav-toggle" id="navToggle">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <main>
+      <section class="packages section">
+        <div class="section-header">
+          <h2>Hand‑picked travel packages</h2>
+          <p>
+            Browse our most loved trips and add them to your cart. You can review details,
+            apply discounts, and complete booking from the billing page.
+          </p>
+        </div>
+        <div class="packages-grid">
+          <article class="package-card" data-id="santorini" data-name="Santorini Escape" data-price="49999">
+            <div class="package-image img-santorini"></div>
+            <div class="package-body">
+              <h3>Santorini Escape</h3>
+              <p>5 nights • Boutique hotel • Winery tour &amp; sunset cruise.</p>
+              <div class="package-footer">
+                <span class="price">₹49,999</span>
+                <button class="btn small add-to-cart">Add to cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="package-card" data-id="bali" data-name="Bali Retreat" data-price="39999">
+            <div class="package-image img-bali"></div>
+            <div class="package-body">
+              <h3>Bali Retreat</h3>
+              <p>6 nights • Private villa • Yoga, spa, and guided temple tours.</p>
+              <div class="package-footer">
+                <span class="price">₹39,999</span>
+                <button class="btn small add-to-cart">Add to cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="package-card" data-id="paris" data-name="Paris City Lights" data-price="35999">
+            <div class="package-image img-paris"></div>
+            <div class="package-body">
+              <h3>Paris City Lights</h3>
+              <p>4 nights • Central stay • Louvre, Seine cruise &amp; Eiffel tickets.</p>
+              <div class="package-footer">
+                <span class="price">₹35,999</span>
+                <button class="btn small add-to-cart">Add to cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="package-card" data-id="kyoto" data-name="Kyoto & Tokyo Discovery" data-price="79999">
+            <div class="package-image img-japan"></div>
+            <div class="package-body">
+              <h3>Kyoto &amp; Tokyo Discovery</h3>
+              <p>8 nights • JR Pass • Tea ceremony &amp; neon nights.</p>
+              <div class="package-footer">
+                <span class="price">₹79,999</span>
+                <button class="btn small add-to-cart">Add to cart</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <aside class="cart-drawer" id="cartDrawer">
+      <div class="cart-drawer-header">
+        <h3>Your Cart</h3>
+        <button id="closeCartBtn" class="icon-btn" aria-label="Close cart">✕</button>
+      </div>
+      <div id="drawerCartItems" class="cart-items"></div>
+      <div class="cart-drawer-footer">
+        <div class="summary-row">
+          <span>Total</span>
+          <span id="drawerTotalValue">₹0.00</span>
+        </div>
+        <button class="btn primary full-width" id="goToCheckoutFromCart">Go to checkout</button>
+      </div>
+    </aside>
+    <div class="cart-drawer-backdrop" id="cartDrawerBackdrop"></div>
+
+    <div class="toast" id="toast"></div>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> SkyWay Travels. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+  </html>
+
+
